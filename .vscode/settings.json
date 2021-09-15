@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["bson"],
+  "cSpell.words": ["bson", "Pymongo"],
   "python.testing.pytestArgs": ["tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true

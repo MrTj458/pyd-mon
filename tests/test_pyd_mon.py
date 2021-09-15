@@ -1,3 +1,4 @@
+import json
 import pytest
 from bson.errors import InvalidId
 from pyd_mon import __version__, MongoId, MongoModel
@@ -40,3 +41,19 @@ def test_mongo_model_mongo():
 def test_mongo_model_from_mongo_no_data():
     expected = None
     assert Item.from_mongo(None) == expected
+
+
+def test_mongo_model_from_mongo_list():
+    mongo_data = [{"_id": MongoId(VALID_ID)}, {"_id": MongoId(VALID_ID)}]
+    expected = [Item(id=MongoId(VALID_ID)), Item(id=MongoId(VALID_ID))]
+    assert Item.from_mongo_list(mongo_data) == expected
+
+
+def test_mongo_model_schema():
+    Item.schema()
+
+
+def test_mongo_model_json():
+    item = Item(id=VALID_ID)
+    expected = json.dumps({"id": VALID_ID})
+    assert item.json() == expected
