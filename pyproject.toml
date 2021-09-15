@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "pyd-mon"
-version = "0.1.0"
-description = ""
-authors = ["MrTj458 <mrtj458@gmail.com>"]
+version = "0.2.0"
+description = "A super small package for validating and converting MongoDB ObjectId's to Pydantic models."
+readme = "README.md"
+license = "MIT"
+authors = ["Trevor Hodsdon"]
+repository = "https://github.com/MrTj458/pyd-mon"
+documentation = "https://github.com/MrTj458/pyd-mon"
 
 [tool.poetry.dependencies]
 python = "^3.9"
